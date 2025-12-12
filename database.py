@@ -1,7 +1,10 @@
 import sqlite3
 from datetime import datetime
+import os
+DB_NAME = os.getenv("TEST_DB","tasks_advanced.db")
+
 def get_connection():
-    conn = sqlite3.connect('database_file.db')
+    conn = sqlite3.connect(DB_NAME)
     return conn
 def create_table():
     conn = get_connection()
